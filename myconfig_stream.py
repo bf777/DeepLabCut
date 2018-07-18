@@ -1,3 +1,11 @@
+"""
+B Forys, brandon.forys@alumni.ubc.ca
+
+Config file for applying a model to a streaming video.
+Edit the variables in this file, then run `python AnalyzeVideos_stream.py` in
+Evaluation-Tools.
+"""
+
 # Analysis Network parameters:
 
 scorer = 'Rene'
