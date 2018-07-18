@@ -5,9 +5,15 @@ https://github.com/AlexEMG/DeepLabCut
 
 A Mathis, alexander.mathis@bethgelab.org
 M Mathis, mackenzie@post.harvard.edu
-Modified by B Forys, brandon.forys@alumni.ubc.ca
 
-This script analyzes a streaming video based on a trained network.
+Adapted by B Forys, brandon.forys@alumni.ubc.ca
+Server by D Xiao, michael.xiao@ubc.ca
+
+This script analyzes a streaming video from
+a Raspberry Pi Picam (over TCP) based on a trained network,
+then returns a threshold value (over UDP) to a Raspberry Pi.
+Tested with Raspberry Pi only.
+
 You need tensorflow for evaluation. Run by:
 CUDA_VISIBLE_DEVICES=0 python3 AnalyzeVideos_stream.py
 
@@ -136,8 +142,12 @@ y_overall = []
 threshold = 0
 
 # Initialize IP addresses
-PC_IP = '169.254.205.9'
-PI_IP = '169.254.169.188'
+
+# Enter the IP address of the computer on which you're running DeepLabCut here
+PC_IP = ''
+
+# Enter the IP address of the Raspberry Pi on which you're running the camera here
+PI_IP = ''
 
 # Set up async loop
 async def frame_process(image, cfg, outputs, index):
@@ -193,11 +203,8 @@ try:
         task = loop.create_task(frame_process(image, cfg, outputs, index))
         loop.run_until_complete(task)
 
-        # pose = getpose(image, cfg, outputs)
-        # print('Pose ' + str(index) + ' saved!')
-        # PredicteData[index, :] = pose.flatten()
-
-        # Plot predicted movement data on frame
+        ## Uncomment the following to plot predicted movement data on frame (may decrease performance):
+        
         # plt.axis('off')
         # plt.figure(frameon=False, figsize=(w * 1. / 100, h * 1. / 100))
         # plt.subplots_adjust(
