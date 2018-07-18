@@ -141,6 +141,12 @@ After successfully training and finding low generalization error for the network
    - To begin, first edit the myconfig_analysis.py file 
      
    - For extracting posture from a folder with videos run ("CUDA_VISIBLE_DEVICES=0 python3 AnalyzeVideos.py") and then make labeled videos ("MakingLabeledVideo.py"). Use "PlotEval.py" to output all of the predicted labels for a given video to .csv, and display all bodyparts as a single, averaged value (this is useful for communicating the efficacy of the label predictor).
+   
+**(9) Run the trained network on a streaming video**
+
+*Requires a Raspberry Pi with a Picam*. It is likely possible to use other webcams as well, but the current script has only been tested with Picam.
+
+*Coming soon!*
 
 # Contribute:
 
