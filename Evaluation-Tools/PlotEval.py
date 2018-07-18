@@ -7,7 +7,7 @@ DataFrame (containing all predicted movement points) to .csv for easy processing
 with MATLAB.
 Additionally, it provides another DataFrame with an unweighted average of all
 points of movement - this is useful if you want a simple representation of the
-overall movement in a given region. 
+overall movement in a given region.
 """
 ####################################################
 # Dependencies
