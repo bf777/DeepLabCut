@@ -33,7 +33,7 @@ sys.path.append(subfolder + "pose-tensorflow/")
 sys.path.append(subfolder + "Generating_a_Training_Set")
 
 from myconfig_stream import Task, date, \
-    trainingsFraction, resnet, snapshotindex, shuffle
+    PC_IP, PI_IP, trainingsFraction, resnet, snapshotindex, shuffle
 
 # Deep-cut dependencies
 from config import load_config
@@ -140,14 +140,6 @@ y_arr = []
 x_overall = []
 y_overall = []
 threshold = 0
-
-# Initialize IP addresses
-
-# Enter the IP address of the computer on which you're running DeepLabCut here
-PC_IP = ''
-
-# Enter the IP address of the Raspberry Pi on which you're running the camera here
-PI_IP = ''
 
 # Set up async loop
 async def frame_process(image, cfg, outputs, index):
