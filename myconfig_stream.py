@@ -7,7 +7,6 @@ Evaluation-Tools.
 """
 
 # Analysis Network parameters:
-
 scorer = 'Rene'
 Task = 'side_right_paw_movement'
 date = 'June12_18'
@@ -15,6 +14,10 @@ trainingsFraction = 0.95  # Fraction of labeled images used for training
 resnet = 50
 snapshotindex = -1
 shuffle = 1
+
+# IP addresses of PC and Raspberry Pi:
+PC_IP = ''
+PI_IP = ''
 
 # For plotting:
 trainingsiterations = 2000  # type the number listed in .pickle file
